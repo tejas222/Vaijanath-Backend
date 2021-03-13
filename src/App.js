@@ -4,6 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/react-bootstrap"
 import Login from "./Pages/login";
 import Register from "./Pages/register";
+import InstitutionalMaster from "./InstitutationMaster/institutationalMaster";
 
 import { BrowserRouter as Router, Route} from "react-router-dom"
 function App() {
@@ -19,7 +20,8 @@ function App() {
      
     
         <Route path="/" component={Login}  exact/>
-        <Route path="/register" component={Register} exact/>
+        <Route path="/stdreg" component={Register} exact/>
+        <Route path="/insmaster" component={InstitutionalMaster} exact />
       </div>
 
     </Router>

@@ -3,6 +3,7 @@ import '../forms.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'; 
 import axios from "axios";
+import { toast } from "react-toastify";
 
 
 
@@ -11,10 +12,11 @@ const Login = () =>
    
 
     const createCourse =(datas) =>{
-        console.log(data.mail+"Mail");
-        console.log(data.pass);
+        
+        console.log(data);
         datas.preventDefault();
         datas.target.reset();
+        
         postService(data);
     }
     const [data, setdata] =  useState({});
@@ -22,20 +24,25 @@ const Login = () =>
 
 
 const postService=(data)=>{
-    axios.post(`http://127.0.0.1/courses`,data).then(
+    axios.post(`http://127.0.0.1/login`,data).then(
         (response)=>{
             //console.log(response);
            if(response.status === 200){
             
             setdata({ mail: "", pass:"" });
+            toast.success("Please wait for Loging",{position: 'top-right'});
            }
            
-           console.log(response);
+         
            
             
         },
         (error)=>{
             
+            toast.warning("Somthing went Wrong",{
+                position: 'top-right',
+            });
+
         }
     )
 }
@@ -52,6 +59,7 @@ const postService=(data)=>{
                     required
                         onChange={(e) => {
                     setdata({ ...data, mail: e.target.value });
+                   
                 }}
 
 
@@ -71,9 +79,7 @@ const postService=(data)=>{
             
             <Button variant="primary" type="submit"
             onClick={(e)=>{
-                    setdata({
-                        mail: "", pass:""
-                    })
+                    
 
                  
                 }}
