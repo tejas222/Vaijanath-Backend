@@ -64,7 +64,9 @@ const Register = () =>
                          <Form.Control type="tel" placeholder="Enter Contact No 1"   name="cont1" required
                           onChange={(e) => {
                             setRegdata({ ...Regdata, cont1: e.target.value });
-                             }} />
+                             }} 
+                                 
+                             />
                       </Form.Group>
                 </div>
                 <div className="col-sm-6">
