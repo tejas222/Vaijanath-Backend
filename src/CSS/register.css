@@ -1,0 +1,11 @@
+body
+{
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5) 270%, rgba(0, 0, 0, 0.48)0%), url(../IMG/BG.jpg);
+    background-repeat:repeat;
+    background-size: cover;
+}
+
+.heading
+{
+    color:#fff;
+}
